@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ResearchCollab.ai — Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="./css/styles.css"/>
+<link rel="stylesheet" href="./css/sign_in.css"/>
+<link rel="stylesheet" href="./css/mind_map.css"/>
+<link rel="stylesheet" href="./css/outline_generator.css"/>
+</head> 
+<body>
+<div class="screen active" id="screen-homepage">
+
+  <!-- State tabs for nav open/closed -->
+  <div class="state-tabs">
+    <button class="state-tab active" onclick="toggleMobileMenu(false)">Menu Closed</button>
+    <button class="state-tab" onclick="toggleMobileMenu(true)">Menu Open (Mobile)</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="hp-nav" id="hp-nav">
+    <div class="logo-wrap">
+      <div class="logo-mark">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="3" fill="white"/>
+          <circle cx="10" cy="3" r="1.5" fill="white" opacity=".7"/>
+          <circle cx="10" cy="17" r="1.5" fill="white" opacity=".7"/>
+          <circle cx="3" cy="10" r="1.5" fill="white" opacity=".7"/>
+          <circle cx="17" cy="10" r="1.5" fill="white" opacity=".7"/>
+          <line x1="10" y1="10" x2="10" y2="4.5" stroke="white" stroke-width="1" opacity=".5"/>
+          <line x1="10" y1="10" x2="10" y2="15.5" stroke="white" stroke-width="1" opacity=".5"/>
+          <line x1="10" y1="10" x2="4.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/>
+          <line x1="10" y1="10" x2="15.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/>
+        </svg>
+      </div>
+      <span class="logo-text">Research<span>Collab</span>.ai</span>
+    </div>
+    <div class="hp-nav-links" id="hp-nav-links">
+      <a href="#">Features</a>
+      <a href="#">For Researchers</a>
+      <a href="#">Pricing</a>
+      <a href="#">About</a>
+      <!-- <a href="#" class="btn-sign-in" onclick="showScreen('signin'); return false;">Sign In</a> -->
+      <a href="#" class="btn-sign-in" onclick="loadPage('sign_in.html')">Sign In</a>
+      <a href="#" class="btn-sign-in" onclick="loadPage('mind_map.html')">Mind Map</a>
+      <a href="#" class="btn-try" onclick="showScreen('signup'); return false;">Start Free</a>
+    </div>
+    <button class="hp-hamburger" id="hp-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="hp-mobile-menu" id="hp-mobile-menu">
+    <a href="#">Features</a>
+    <a href="#">For Researchers</a>
+    <a href="#">Pricing</a>
+    <a href="#">About</a>
+    <a href="#" class="mm-cta" onclick="showScreen('signup'); return false;">Start Free — No Credit Card</a>
+  </div>
+  
+<div id="content-area">
+    <div id="container">
+        <h1>Welcome! Please select an option above.</h1>
+    </div>
+</div>
+  <!-- Hero -->
+  <section class="hp-hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hp-hero-inner">
+      <div class="hp-hero-copy">
+        <div class="hp-hero-badge">
+          <span></span>
+          Trusted by doctoral scholars & founders
+        </div>
+        <h1>Map your research.<br/><em>Faster.</em></h1>
+        <p class="hp-hero-sub">
+          ResearchCollab.ai transforms any topic into a living, visual knowledge graph — with AI-guided citations, outlines, and connections you didn't know existed.
+        </p>
+        <div class="topic-search-bar" id="hero-search">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0; opacity:.4">
+            <circle cx="7" cy="7" r="5" stroke="#0a0e1a" stroke-width="1.5"/>
+            <path d="M11 11l3 3" stroke="#0a0e1a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="text" placeholder="Enter a research topic, e.g. &quot;Quantum cognition&quot;" id="hero-input"/>
+          <button class="topic-search-btn" onclick="showScreen('mindmap')">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Explore Topic
+          </button>
+        </div>
+        <div class="topic-hints">
+          <span class="topic-hint">Quantum cognition</span>
+          <span class="topic-hint">AI ethics in healthcare</span>
+          <span class="topic-hint">Climate economics</span>
+          <span class="topic-hint">Gene therapy</span>
+        </div>
+      </div>
+      <div class="hp-hero-visual">
+        <div class="hero-mockup">
+          <div class="hero-mockup-header">
+            <div class="mock-dot r"></div>
+            <div class="mock-dot y"></div>
+            <div class="mock-dot g"></div>
+            <span class="mock-title">Visual Mind Map · Quantum Cognition</span>
+          </div>
+          <div class="mini-map" id="mini-map">
+            <svg id="mini-svg"></svg>
+            <div class="m-node central" id="mc">Quantum Cognition</div>
+            <div class="m-node n1" id="mn1">Superposition Models</div>
+            <div class="m-node n2" id="mn2">Decision Theory</div>
+            <div class="m-node n3" id="mn3">Neural Correlates</div>
+            <div class="m-node n4" id="mn4">Cognitive Bias</div>
+            <div class="m-node n5" id="mn5">Wave Function</div>
+            <div class="m-node n6" id="mn6">Entanglement</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof strip -->
+  <div class="proof-strip">
+    <div class="proof-inner">
+      <div class="proof-stat">
+        <p class="proof-num">40K+</p>
+        <p class="proof-label">Researchers</p>
+      </div>
+      <div class="proof-stat">
+        <p class="proof-num">2M+</p>
+        <p class="proof-label">Mind Maps Created</p>
+      </div>
+      <div class="proof-stat">
+        <p class="proof-num">180+</p>
+        <p class="proof-label">Countries</p>
+      </div>
+      <div class="proof-stat">
+        <p class="proof-num">4.9★</p>
+        <p class="proof-label">Average Rating</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <section class="hp-section">
+    <p class="hp-section-label">The Platform</p>
+    <h2>Research intelligence,<br/>beautifully structured.</h2>
+    <p>From a single topic, we surface the concepts, connections, and scholarly context that take months to map manually.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="11" r="3.5" fill="currentColor"/>
+            <circle cx="5" cy="5" r="2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17" cy="5" r="2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="5" cy="17" r="2" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="17" cy="17" r="2" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="11" y1="7.5" x2="6.4" y2="6.4" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="11" y1="7.5" x2="15.6" y2="6.4" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="11" y1="14.5" x2="6.4" y2="15.6" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="11" y1="14.5" x2="15.6" y2="15.6" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <p class="feat-title">Visual Mind Map</p>
+        <p class="feat-desc">An interactive, zoomable knowledge graph that makes the full landscape of your topic visible at a glance. Expand any node to dive deeper.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="3" y="3" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <line x1="7" y1="8" x2="15" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="7" y1="11" x2="15" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="7" y1="14" x2="11" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="feat-title">Outline Generator</p>
+        <p class="feat-desc">Transforms your chosen nodes into a formal, typographically precise research outline — ready to export as a working document.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 4v14M4 11h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <p class="feat-title">Citation Discovery</p>
+        <p class="feat-desc">Surfaces relevant academic sources, papers, and citations for every node — with direct links and formatted references.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M3 11l5 5L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="feat-title">Zero Scroll Actions</p>
+        <p class="feat-desc">Every primary action is persistently visible. Generate, export, and navigate — without hunting for buttons.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 18a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="feat-title">Team Collaboration</p>
+        <p class="feat-desc">Share mind maps with colleagues, annotate nodes, and build on each other's research in real time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <rect x="4" y="14" width="4" height="5" rx="1" fill="currentColor" opacity=".3"/>
+            <rect x="9" y="10" width="4" height="9" rx="1" fill="currentColor" opacity=".6"/>
+            <rect x="14" y="6" width="4" height="13" rx="1" fill="currentColor"/>
+          </svg>
+        </div>
+        <p class="feat-title">Research Analytics</p>
+        <p class="feat-desc">Track how your knowledge graph grows over time. See which topics have the richest source support and identify coverage gaps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <div style="background: var(--bleached); border-top:1px solid var(--cold); border-bottom:1px solid var(--cold);">
+    <section class="hp-section">
+      <p class="hp-section-label">How It Works</p>
+      <h2>From idea to insight<br/>in three steps.</h2>
+      <p>No configuration. No manual tagging. Just a topic and a few clicks.</p>
+      <div class="how-steps">
+        <div>
+          <p class="step-num">01</p>
+          <p class="step-title">Enter your research topic</p>
+          <p class="step-desc">Type any subject — broad or narrow. Our AI begins mapping the knowledge graph immediately.</p>
+        </div>
+        <div>
+          <p class="step-num">02</p>
+          <p class="step-title">Explore the Mind Map</p>
+          <p class="step-desc">Navigate a rich, interactive graph of concepts, sub-topics, and scholarly connections. Expand, filter, and focus.</p>
+        </div>
+        <div>
+          <p class="step-num">03</p>
+          <p class="step-title">Generate your Outline</p>
+          <p class="step-desc">Select the nodes that matter to your research and instantly produce a structured, formal outline with citations.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="hp-cta-banner">
+    <h2>Start mapping your research today.</h2>
+    <p>Join 40,000+ researchers, strategists, and founders using ResearchCollab.ai to accelerate discovery.</p>
+    <div class="topic-search-bar">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0; opacity:.35">
+        <circle cx="7" cy="7" r="5" stroke="white" stroke-width="1.5"/>
+        <path d="M11 11l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <input type="text" placeholder="Enter your first topic…" style="color:#fff"/>
+      <button class="topic-search-btn" onclick="showScreen('mindmap')">Get Started Free</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="hp-footer">
+    <div class="hp-footer-inner">
+      <div class="footer-brand-col">
+        <span class="logo-text">Research<span>Collab</span>.ai</span>
+        <p class="footer-tagline">The research intelligence platform for scholars, strategists, and founders who demand depth.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#">Mind Map</a>
+        <a href="#">Outline Generator</a>
+        <a href="#">Citations</a>
+        <a href="#">Collaboration</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Documentation</a>
+        <a href="#">Pricing</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="hp-footer-bottom">
+      <p class="footer-copy">© 2025 ResearchCollab.ai. All rights reserved.</p>
+      <p class="footer-copy">Built for thinkers.</p>
+    </div>
+  </footer>
+
+</div><!-- end screen-homepage -->
+</body>
+<script src="./js/router.js"></script>
+<script src="./js/homepage.js"></script>
+<script src="./js/mind_map.js"></script>
+<script src="./js/outline_sidebar.js"></script>
+<script>
+    
+    /* ──────────────────────────────────────────────────────────────
+    INIT — Run defaults
+    ────────────────────────────────────────────────────────────── */
+    setTimeout(() => {
+    drawMapLines();
+    setMapState('menu-open');
+    setOutlineState('menu-open');
+    }, 200);
+
+    window.addEventListener('resize', drawMapLines);
+
+    /* Nav scroll effect */
+    window.addEventListener('scroll', () => {
+    const nav = document.getElementById('hp-nav');
+    if(nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+</script>
+</html>

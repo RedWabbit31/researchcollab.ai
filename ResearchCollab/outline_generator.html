@@ -1,0 +1,281 @@
+
+<!-- ════════════════════════════════════════════════════════════
+     SCREEN 4 — OUTLINE GENERATOR
+     ════════════════════════════════════════════════════════════ -->
+<div class="form-container" id="screen-outline">
+
+  <div class="state-tabs">
+    <button class="state-tab active" onclick="setOutlineState('menu-open')">Menu Open</button>
+    <button class="state-tab" onclick="setOutlineState('menu-closed')">Menu Closed</button>
+  </div>
+
+  <div class="sidebar-backdrop" id="outline-backdrop" onclick="setOutlineState('menu-closed')"></div>
+
+  <div class="outline-shell">
+    <!-- Same top bar -->
+    <div class="app-topbar">
+      <div class="app-logo">
+        <div class="logo-mark" style="width:28px;height:28px;border-radius:8px;">
+          <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><circle cx="10" cy="10" r="3" fill="white"/><circle cx="10" cy="3" r="1.5" fill="white" opacity=".7"/><circle cx="10" cy="17" r="1.5" fill="white" opacity=".7"/><circle cx="3" cy="10" r="1.5" fill="white" opacity=".7"/><circle cx="17" cy="10" r="1.5" fill="white" opacity=".7"/><line x1="10" y1="10" x2="10" y2="4.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="10" y2="15.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="4.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="15.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/></svg>
+        </div>
+        <span class="logo-text" style="font-size:13px;">Research<span>Collab</span>.ai</span>
+      </div>
+      <div class="topbar-topic">
+        <span class="topbar-topic-label">Outline</span>
+        <span class="topbar-topic-val">Quantum Cognition — Research Outline</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-btn" id="outline-sidebar-toggle" onclick="toggleOutlineSidebar()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="6.25" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="10.5" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+          Sections
+        </button>
+        <button class="topbar-btn" onclick="showScreen('mindmap')">← Mind Map</button>
+        <button class="topbar-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v7M4 6l3 3 3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="10" width="10" height="2" rx="1" fill="currentColor" opacity=".4"/></svg>
+          Export
+        </button>
+        <div class="topbar-avatar">JD</div>
+      </div>
+    </div>
+
+    <div class="outline-body">
+      <!-- Outline sidebar -->
+      <div class="outline-sidebar" id="outline-sidebar">
+        <div class="outline-sidebar-inner">
+          <div class="sidebar-header">
+            <span class="sidebar-title">Sections</span>
+            <button class="sidebar-close-btn" onclick="toggleOutlineSidebar()">✕</button>
+          </div>
+          <div class="outline-sec-list">
+            <div class="osec-item active">
+              <div class="osec-num">1</div>
+              <span class="osec-label">Introduction</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">2</div>
+              <span class="osec-label">Theoretical Framework</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">3</div>
+              <span class="osec-label">Superposition Models</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">4</div>
+              <span class="osec-label">Decision Theory Applications</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">5</div>
+              <span class="osec-label">Neural Correlates</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">6</div>
+              <span class="osec-label">Methodology</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">7</div>
+              <span class="osec-label">Discussion</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">8</div>
+              <span class="osec-label">Conclusion</span>
+            </div>
+            <div class="osec-item">
+              <div class="osec-num">R</div>
+              <span class="osec-label">References</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outline document -->
+      <div class="outline-main" id="outline-main">
+        <div class="outline-doc-header">
+          <span class="outline-doc-tag">Research Outline</span>
+          <h1 class="outline-doc-title">Quantum Cognition: Superposition, Decision-Making, and Neural Correlates</h1>
+          <div class="outline-doc-meta">
+            <span class="outline-meta-item">
+              <svg class="outline-meta-icon" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#8892a4" stroke-width="1.2"/><path d="M8 5v3.5l2 1.5" stroke="#8892a4" stroke-width="1.2" stroke-linecap="round"/></svg>
+              8 Sections
+            </span>
+            <span class="outline-meta-item">
+              <svg class="outline-meta-icon" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="1.5" stroke="#8892a4" stroke-width="1.2"/><line x1="5" y1="6" x2="11" y2="6" stroke="#8892a4" stroke-width="1.2" stroke-linecap="round"/><line x1="5" y1="9" x2="8" y2="9" stroke="#8892a4" stroke-width="1.2" stroke-linecap="round"/></svg>
+              23 Sub-sections
+            </span>
+            <span class="outline-meta-item" style="color:var(--hadfield);">
+              <svg class="outline-meta-icon" viewBox="0 0 16 16" fill="none"><path d="M3 12l4-4 3 3 3-4" stroke="#0e70ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Doctoral Level
+            </span>
+          </div>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="outline-section">
+          <div class="outline-section-head">
+            <span class="outline-sec-num">1</span>
+            <h2 class="outline-sec-title">Introduction</h2>
+          </div>
+          <div class="outline-subsections">
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">1.1</span>
+                <span class="outline-subsec-title">Background and Motivation</span>
+              </div>
+              <p class="outline-subsec-desc">Overview of the intersection between quantum mechanical formalisms and cognitive science. Situates the research within the broader context of post-classical theories of mind.</p>
+              <div class="outline-keywords">
+                <span class="outline-kw">quantum formalism</span>
+                <span class="outline-kw">cognitive science</span>
+                <span class="outline-kw">interdisciplinary</span>
+              </div>
+            </div>
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">1.2</span>
+                <span class="outline-subsec-title">Research Questions and Scope</span>
+              </div>
+              <p class="outline-subsec-desc">Defines the primary and secondary research questions. Establishes conceptual scope and identifies key theoretical limitations.</p>
+            </div>
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">1.3</span>
+                <span class="outline-subsec-title">Significance and Contribution</span>
+              </div>
+              <p class="outline-subsec-desc">Articulates the novel contribution to existing literature and the practical implications for decision science and cognitive modelling.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="outline-section">
+          <div class="outline-section-head">
+            <span class="outline-sec-num">2</span>
+            <h2 class="outline-sec-title">Theoretical Framework</h2>
+          </div>
+          <div class="outline-subsections">
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">2.1</span>
+                <span class="outline-subsec-title">Classical vs. Quantum Probability</span>
+              </div>
+              <p class="outline-subsec-desc">Contrasts Kolmogorovian probability axioms with quantum probability theory. Examines where classical models fail to account for observed cognitive phenomena.</p>
+              <div class="outline-keywords">
+                <span class="outline-kw">Kolmogorov axioms</span>
+                <span class="outline-kw">quantum probability</span>
+                <span class="outline-kw">conjunction fallacy</span>
+              </div>
+            </div>
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">2.2</span>
+                <span class="outline-subsec-title">Hilbert Space Formalism</span>
+              </div>
+              <p class="outline-subsec-desc">Introduces Hilbert space as the mathematical arena for modelling belief states. Covers unit vectors, projectors, and measurement operators as cognitive analogues.</p>
+            </div>
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">2.3</span>
+                <span class="outline-subsec-title">Order Effects in Judgement</span>
+              </div>
+              <p class="outline-subsec-desc">Reviews empirical evidence for order effects in human judgement tasks that are naturally explained by quantum rather than classical models.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="outline-section">
+          <div class="outline-section-head">
+            <span class="outline-sec-num">3</span>
+            <h2 class="outline-sec-title">Superposition Models of Cognition</h2>
+          </div>
+          <div class="outline-subsections">
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">3.1</span>
+                <span class="outline-subsec-title">Quantum Belief Superposition</span>
+              </div>
+              <p class="outline-subsec-desc">Models belief as existing in a superposition of multiple potential states before a question forces a definitive response — a "measurement" in quantum terms.</p>
+              <div class="outline-keywords">
+                <span class="outline-kw">belief states</span>
+                <span class="outline-kw">superposition</span>
+                <span class="outline-kw">measurement collapse</span>
+              </div>
+            </div>
+            <div>
+              <div class="outline-subsec">
+                <span class="outline-subsec-num">3.2</span>
+                <span class="outline-subsec-title">Interference Effects</span>
+              </div>
+              <p class="outline-subsec-desc">Explores constructive and destructive interference between belief states as a mechanism for explaining disjunction effects and other cognitive anomalies.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- More sections abbreviated -->
+        <div class="outline-section" style="opacity:.6;">
+          <div class="outline-section-head">
+            <span class="outline-sec-num">4</span>
+            <h2 class="outline-sec-title">Decision Theory Applications</h2>
+          </div>
+          <div class="outline-subsections">
+            <div class="outline-subsec"><span class="outline-subsec-num">4.1</span><span class="outline-subsec-title">Prisoner's Dilemma Violations</span></div>
+            <div class="outline-subsec"><span class="outline-subsec-num">4.2</span><span class="outline-subsec-title">Prospect Theory Intersections</span></div>
+            <div class="outline-subsec"><span class="outline-subsec-num">4.3</span><span class="outline-subsec-title">Ambiguity and Uncertainty Modelling</span></div>
+          </div>
+        </div>
+        <div class="outline-section" style="opacity:.6;">
+          <div class="outline-section-head">
+            <span class="outline-sec-num">5</span>
+            <h2 class="outline-sec-title">Neural Correlates</h2>
+          </div>
+          <div class="outline-subsections">
+            <div class="outline-subsec"><span class="outline-subsec-num">5.1</span><span class="outline-subsec-title">Neuroimaging Evidence</span></div>
+            <div class="outline-subsec"><span class="outline-subsec-num">5.2</span><span class="outline-subsec-title">Entanglement Analogues in Neural Networks</span></div>
+          </div>
+        </div>
+
+        <div style="height:120px;"></div><!-- padding for sticky bar -->
+      </div>
+
+      <!-- Right suggestions panel -->
+      <div class="outline-right" id="outline-right">
+        <p class="or-title">AI Suggestions</p>
+        <div class="or-suggestion">
+          <p class="or-sug-label">Missing subsection</p>
+          <p class="or-sug-text">Consider adding a subsection on "Quantum Zeno Effect" under Section 3 — highly cited in the literature.</p>
+        </div>
+        <div class="or-suggestion">
+          <p class="or-sug-label">Citation gap</p>
+          <p class="or-sug-text">Section 2.1 would benefit from Tversky & Kahneman (1983) on the conjunction fallacy.</p>
+        </div>
+        <div class="or-suggestion">
+          <p class="or-sug-label">Structure tip</p>
+          <p class="or-sug-text">Sections 4 and 5 could be merged for a tighter argument chain — common in doctoral theses at this scope.</p>
+        </div>
+        <div class="or-suggestion">
+          <p class="or-sug-label">Related topic</p>
+          <p class="or-sug-text">Contextuality (Kochen-Specker theorem) is a frequent companion topic — want to add a node?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Persistent action bar (fixed, zero-scroll guarantee) -->
+    <div class="outline-action-bar" id="outline-action-bar">
+      <button class="oab-btn" onclick="toggleOutlineSidebar()">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x=".5" y="1" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x=".5" y="5.5" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x=".5" y="10" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+        Sections
+      </button>
+      <div class="oab-sep"></div>
+      <button class="oab-btn">Regenerate</button>
+      <button class="oab-btn primary">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5v7M3.5 5.5l3 3 3-3" stroke="white" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="1.5" y="10" width="10" height="2" rx="1" fill="white" opacity=".5"/></svg>
+        Export as DOCX
+      </button>
+      <button class="oab-btn gold">Create Content →</button>
+    </div>
+
+    <!-- Mobile sticky bar -->
+    <div class="mobile-toggle-bar">
+      <button class="mob-action-btn secondary" onclick="toggleOutlineSidebar()">Sections</button>
+      <button class="mob-action-btn primary">Create Content →</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,192 @@
+
+<!-- ════════════════════════════════════════════════════════════
+     SCREEN 3 — MIND MAP
+     ════════════════════════════════════════════════════════════ -->
+<div class="form-container" id="screen-mindmap">
+
+  <div class="state-tabs">
+    <button class="state-tab active" onclick="setMapState('menu-open')">Menu Open</button>
+    <button class="state-tab" onclick="setMapState('menu-closed')">Menu Closed</button>
+    <button class="state-tab" onclick="setMapState('node-selected')">Node Selected</button>
+  </div>
+
+  <div class="sidebar-backdrop" id="map-backdrop" onclick="setMapState('menu-closed')"></div>
+
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <div class="app-topbar">
+      <div class="app-logo">
+        <div class="logo-mark" style="width:28px;height:28px;border-radius:8px;">
+          <svg viewBox="0 0 20 20" fill="none" width="16" height="16"><circle cx="10" cy="10" r="3" fill="white"/><circle cx="10" cy="3" r="1.5" fill="white" opacity=".7"/><circle cx="10" cy="17" r="1.5" fill="white" opacity=".7"/><circle cx="3" cy="10" r="1.5" fill="white" opacity=".7"/><circle cx="17" cy="10" r="1.5" fill="white" opacity=".7"/><line x1="10" y1="10" x2="10" y2="4.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="10" y2="15.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="4.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="15.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/></svg>
+        </div>
+        <span class="logo-text" style="font-size:13px;">Research<span>Collab</span>.ai</span>
+      </div>
+      <div class="topbar-topic">
+        <span class="topbar-topic-label">Topic</span>
+        <span class="topbar-topic-val">Quantum Cognition</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="topbar-btn" id="map-sidebar-toggle" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="6.25" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="10.5" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+          Nodes
+        </button>
+        <button class="topbar-btn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          History
+        </button>
+        <button class="topbar-btn">Share</button>
+        <button class="topbar-btn primary" onclick="showScreen('outline')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="1.5" stroke="white" stroke-width="1.2"/><line x1="4.5" y1="5" x2="9.5" y2="5" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="4.5" y1="7" x2="9.5" y2="7" stroke="white" stroke-width="1.2" stroke-linecap="round"/><line x1="4.5" y1="9" x2="7" y2="9" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Generate Outline
+        </button>
+        <div class="topbar-avatar">JD</div>
+      </div>
+    </div>
+
+    <div class="app-body">
+      <!-- Sidebar -->
+      <div class="app-sidebar" id="map-sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-title">Research Nodes</span>
+          <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" placeholder="Filter nodes…"/>
+        </div>
+        <div class="sidebar-scroll">
+          <p class="sidebar-section-label">Core Concepts</p>
+          <div class="node-item active">
+            <div class="node-dot blue"></div>
+            <span class="node-label">Quantum Cognition</span>
+            <span class="node-badge">Central</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot blue"></div>
+            <span class="node-label">Superposition Models</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot blue"></div>
+            <span class="node-label">Decision Theory</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gold"></div>
+            <span class="node-label">Wave Function</span>
+          </div>
+          <p class="sidebar-section-label">Sub-Topics</p>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot green"></div>
+            <span class="node-label">Neural Correlates</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot green"></div>
+            <span class="node-label">Cognitive Bias</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gold"></div>
+            <span class="node-label">Entanglement</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gray"></div>
+            <span class="node-label">Probability Judgements</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gray"></div>
+            <span class="node-label">Hilbert Space</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot green"></div>
+            <span class="node-label">Contextuality</span>
+          </div>
+          <p class="sidebar-section-label">Related Fields</p>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gray"></div>
+            <span class="node-label">Quantum Psychology</span>
+          </div>
+          <div class="node-item" onclick="setMapState('node-selected')">
+            <div class="node-dot gray"></div>
+            <span class="node-label">Behavioural Economics</span>
+          </div>
+        </div>
+        <!-- Sidebar bottom action -->
+        <div style="padding:12px; border-top:1px solid var(--cold); flex-shrink:0;">
+          <button style="width:100%;height:40px;background:var(--hadfield);color:#fff;border:none;border-radius:var(--r-sm);font-size:13px;font-weight:600;cursor:pointer;" onclick="showScreen('outline')">
+            Generate Outline →
+          </button>
+        </div>
+      </div>
+
+      <!-- Canvas -->
+      <div class="app-canvas" id="map-canvas" style="position:relative;">
+        <svg class="map-svg" id="map-svg"></svg>
+
+        <!-- Mind map nodes (positioned via JS on load, manual fallback) -->
+        <div class="map-node central" id="node-central" style="top:calc(50% - 22px); left:calc(50% - 80px);">Quantum Cognition</div>
+        <div class="map-node branch-1" id="node-1" style="top:25%; left:25%;" onclick="setMapState('node-selected')">Superposition Models</div>
+        <div class="map-node branch-1" id="node-2" style="top:20%; left:60%;" onclick="setMapState('node-selected')">Decision Theory</div>
+        <div class="map-node branch-2" id="node-3" style="top:55%; left:18%;" onclick="setMapState('node-selected')">Wave Function</div>
+        <div class="map-node branch-2" id="node-4" style="top:68%; left:58%;" onclick="setMapState('node-selected')">Cognitive Bias</div>
+        <div class="map-node branch-3" id="node-5" style="top:35%; left:70%;" onclick="setMapState('node-selected')">Neural Correlates</div>
+        <div class="map-node branch-3" id="node-6" style="top:72%; left:30%;" onclick="setMapState('node-selected')">Entanglement</div>
+        <div class="map-node" id="node-7" style="top:15%; left:42%;" onclick="setMapState('node-selected')">Probability Judgements</div>
+        <div class="map-node" id="node-8" style="top:75%; left:72%;" onclick="setMapState('node-selected')">Hilbert Space</div>
+
+        <!-- Sidebar open button when closed -->
+        <button class="sidebar-open-btn" id="sidebar-open-btn" style="display:none;" onclick="toggleSidebar()">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="6.25" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="10.5" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+        </button>
+
+        <!-- Persistent Action Bar (zero scroll guarantee) -->
+        <div class="canvas-action-bar">
+          <button class="cab-btn" onclick="toggleSidebar()">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x=".5" y="1" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x=".5" y="5.5" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x=".5" y="10" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+            Nodes
+          </button>
+          <div class="cab-divider"></div>
+          <button class="cab-btn">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M5 6.5h5M6.5 5v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </button>
+          <span class="zoom-display">100%</span>
+          <button class="cab-btn">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M4 6.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="cab-divider"></div>
+          <button class="cab-btn">Expand All</button>
+          <button class="cab-btn primary" onclick="showScreen('outline')">Generate Outline →</button>
+        </div>
+      </div>
+
+      <!-- Node detail panel -->
+      <div class="node-panel hidden" id="node-panel">
+        <div class="node-panel-header">
+          <span class="node-panel-title">Superposition Models</span>
+          <button class="panel-close" onclick="setMapState('menu-open')">✕</button>
+        </div>
+        <div class="node-panel-body">
+          <p class="panel-section-title">Overview</p>
+          <p class="panel-abstract">Superposition models in quantum cognition apply the mathematical framework of quantum mechanics to model human judgment. Unlike classical probability, these models allow for states of belief that exist in multiple configurations simultaneously until a decision is reached.</p>
+          <p class="panel-section-title" style="margin-top:16px;">Tags</p>
+          <span class="panel-tag">Quantum probability</span>
+          <span class="panel-tag">Belief states</span>
+          <span class="panel-tag">Decision-making</span>
+          <p class="panel-section-title" style="margin-top:16px;">Key Papers</p>
+          <div style="font-size:12px; color:var(--mid); line-height:1.6; padding:10px; background:var(--bleached); border-radius:6px; margin-bottom:8px;">
+            Busemeyer & Bruza (2012). Quantum Models of Cognition and Decision. <em>Cambridge University Press.</em>
+          </div>
+          <div style="font-size:12px; color:var(--mid); line-height:1.6; padding:10px; background:var(--bleached); border-radius:6px;">
+            Pothos & Busemeyer (2009). A quantum probability explanation for violations of 'rational' decision theory. <em>Proc. R. Soc. B.</em>
+          </div>
+          <button class="panel-action-btn" onclick="showScreen('outline')">Add to Outline →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile sticky action bar -->
+    <div class="mobile-toggle-bar">
+      <button class="mob-action-btn secondary" onclick="toggleSidebar()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="6.25" width="8" height="1.5" rx=".75" fill="currentColor"/><rect x="1" y="10.5" width="10" height="1.5" rx=".75" fill="currentColor"/></svg>
+        Nodes
+      </button>
+      <button class="mob-action-btn primary" onclick="showScreen('outline')">Generate Outline →</button>
+    </div>
+  </div>
+</div>

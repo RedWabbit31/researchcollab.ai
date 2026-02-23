@@ -1,0 +1,62 @@
+
+
+<!-- ════════════════════════════════════════════════════════════
+     SCREEN 2A — SIGN IN
+     ════════════════════════════════════════════════════════════ -->
+<!-- <div class="form-container">
+    <h2>Sign In</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button>Login</button>
+</div> -->
+<div class="form-container" id="screen-signin">
+  <div class="auth-screen">
+    <div class="auth-left">
+      <canvas id="auth-canvas" style="position:absolute;inset:0;pointer-events:none;"></canvas>
+      <div class="auth-left-logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="white"/><circle cx="10" cy="3" r="1.5" fill="white" opacity=".7"/><circle cx="10" cy="17" r="1.5" fill="white" opacity=".7"/><circle cx="3" cy="10" r="1.5" fill="white" opacity=".7"/><circle cx="17" cy="10" r="1.5" fill="white" opacity=".7"/><line x1="10" y1="10" x2="10" y2="4.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="10" y2="15.5" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="4.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/><line x1="10" y1="10" x2="15.5" y2="10" stroke="white" stroke-width="1" opacity=".5"/></svg>
+        </div>
+        <span class="logo-text">Research<span>Collab</span>.ai</span>
+      </div>
+      <div class="auth-left-content">
+        <p class="auth-left-tagline">The Research Intelligence Platform</p>
+        <h2>Welcome<br/>back.</h2>
+        <p>Your knowledge graph is waiting. Dive back into your research where you left off.</p>
+        <div class="auth-left-pills">
+          <span class="auth-pill">Visual Mind Maps</span>
+          <span class="auth-pill">AI Outline Generator</span>
+          <span class="auth-pill">Citation Discovery</span>
+          <span class="auth-pill">Team Collaboration</span>
+        </div>
+      </div>
+    </div>
+    <div class="auth-right">
+      <div class="auth-form-box">
+        <h3>Sign in to your account</h3>
+        <p class="auth-sub">No account yet? <a href="#" onclick="showScreen('signup'); return false;">Create one free →</a></p>
+
+        <button class="btn-social">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+
+        <div class="auth-divider">or sign in with email</div>
+
+        <div class="form-field">
+          <label>Email address</label>
+          <input type="email" placeholder="you@university.edu"/>
+        </div>
+        <div class="form-field">
+          <label>Password <a href="#" class="forgot-link">Forgot password?</a></label>
+          <input type="password" placeholder="••••••••••"/>
+        </div>
+
+        <button class="btn-auth" onclick="showScreen('mindmap')">Sign In →</button>
+
+        <p style="font-size:12px; color:var(--muted); margin-top:20px; line-height:1.6;">By signing in, you agree to our <a href="#" style="color:var(--hadfield)">Terms of Service</a> and <a href="#" style="color:var(--hadfield)">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
