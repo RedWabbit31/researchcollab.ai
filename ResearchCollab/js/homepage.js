@@ -1,4 +1,16 @@
-
+/* ──────────────────────────────────────────────────────────────
+   SCREEN NAVIGATION
+   ────────────────────────────────────────────────────────────── */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + id).classList.add('active');
+  document.querySelectorAll('.snav-btn').forEach(b => b.classList.remove('active'));
+  const map = {homepage:'0',signin:'1',signup:'2',mindmap:'3',outline:'4'};
+  document.querySelectorAll('.snav-btn')[parseInt(map[id])]?.classList.add('active');
+  window.scrollTo(0,0);
+  if (id === 'mindmap') { setTimeout(drawMapLines, 100); }
+  if (id === 'outline') { setOutlineState('menu-open'); }
+}
 /* ──────────────────────────────────────────────────────────────
    HOMEPAGE — Canvas node network effect
    ────────────────────────────────────────────────────────────── */
